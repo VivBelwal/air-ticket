@@ -9,7 +9,9 @@ LoginRoute.post("/login", async (req,res) =>{
     try{
 
         let user = await User.findOne({email});
-        if(user.length>0){
+        console.log(user)
+        
+        if(user){
 
             if(user.password === password){
 

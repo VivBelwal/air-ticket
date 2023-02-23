@@ -11,6 +11,6 @@ const FlightSchema = new Schema({
     price : {type : Number, required: true,}
 })
 
-const Flight = model("flight", UserSchema);
+const Flight = model("flight", FlightSchema);
 
 module.exports = Flight

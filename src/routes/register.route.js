@@ -1,6 +1,6 @@
 const express = require('express');
-const User = require("../models/user.model");
 const RegisterRoute = express.Router();
+const User = require("../models/user.model");
 RegisterRoute.use(express.json());
 
 RegisterRoute.post("/register", async (req,res) =>{
@@ -9,6 +9,7 @@ RegisterRoute.post("/register", async (req,res) =>{
     try{
 
         let user = await User.find({email});
+        console.log(user)
         if(user.length>0){
 
            return  res.status(401).send({status : "Falied", message :  "User already exists"})
