@@ -42,7 +42,7 @@ FlightRoute.patch("/flights/:id", async (req,res) =>{
        await Flight.updateOne({_id : id}, {$set: {airline,flightNo,departure,arrival,departureTime,arrivalTime,seats,price}})
        
        
-            return  res.status(204).send({status : "Success",message :  "Flights Update successfuly", data : flights})
+            return  res.status(204).send("a")
      
     }catch(e){
         return  res.status(400).send({status : "Falied", message :  "Bad Request"})
@@ -68,7 +68,7 @@ FlightRoute.delete("/flights/:id", async (req,res) =>{
 })
 
 
-// 
+// list of all available flights.
 FlightRoute.get("/flights", async (req,res) =>{
     
 
@@ -80,7 +80,7 @@ FlightRoute.get("/flights", async (req,res) =>{
             return  res.status(200).send({status : "Success", message :  "All available Flights" , data : flights})
      
     }catch(e){
-        return  res.status(400).send({status : "Falied", message :  "Bad Request"})
+        return  res.status(404).send({status : "Falied", message :  "Bad Request"})
        
     }
 })

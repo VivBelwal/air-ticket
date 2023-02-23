@@ -18,7 +18,7 @@ RegisterRoute.post("/register", async (req,res) =>{
             return  res.status(201).send({status : "Success", message :  "Registration Successfull"})
         }
     }catch(e){
-        return  res.status(400).send({status : "Falied", message :  "Bad Request"})
+        return  res.status(404).send({status : "Falied", message :  "Bad Request"})
        
     }
 })
