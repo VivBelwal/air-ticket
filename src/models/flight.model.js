@@ -2,7 +2,7 @@ const {Schema, model} = require("mongoose");
 
 const FlightSchema = new Schema({
     airline : {type : String, required: true, },
-    flightNo : {type : String, required: true,},
+    flightNo : {type : String, required: true,unique: true},
     departure : {type : String, required: true},
     arrival : {type : String, required: true},
     departureTime : {type : Date, required: true, },

@@ -9,12 +9,16 @@ const cors = require("cors");
 const login = require("./src/routes/login.route")
 const register = require("./src/routes/register.route")
 const flight = require("./src/routes/flights.route")
+const book = require("./src/routes/booking.route")
+const dashboard = require("./src/routes/dashboard.route");
 const connect = require("./src/config/db")
 app.use(express.json());
 app.use(cors())
 app.use("/api", login);
 app.use("/api", register);
 app.use("/api", flight);
+app.use("/api", book);
+app.use("/api", dashboard);
 app.listen(PORT, async () =>{
     try{
 await connect();
