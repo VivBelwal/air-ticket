@@ -2,7 +2,7 @@
 
 # To Register 
 Method: POST
-URL : 
+URL : https://air-ticket.onrender.com/api/register
 BODY : {
       name : {type : String, required: true},
     email : {type : String, required: true, unique:true},
@@ -15,7 +15,7 @@ Responses
 
 # To Login 
 Method: POST
-URL : 
+URL : https://air-ticket.onrender.com/api/login
 BODY : {
      
     email : {type : String, required: true, unique:true},
@@ -29,7 +29,7 @@ Responses
 
 # To ADD NEW Fligts 
 Method: POST
-URL : 
+URL : https://air-ticket.onrender.com/api/flights
 BODY : {
      
  airline : {type : String, required: true, },
@@ -47,7 +47,7 @@ status(400).send({status : "Falied", message :  "Bad Request"}
 
 # list of all available flights.
 Method: GET
-URL : 
+URL : https://air-ticket.onrender.com/api/flights
 
 Responses
 res.status(200).send({status : "Success", message :  "All available Flights" , data : flights})
@@ -55,14 +55,14 @@ res.status(404).send({status : "Falied", message :  "Bad Request"})
 
 # the details of a specific flight identified by its ID.
 Method: GET
-URL : 
+URL : https://air-ticket.onrender.com/api/flights/id
 
 Responses
             res.status(200).send({status : "Success", data : flights})
               res.status(400).send({status : "Falied", message :  "Bad Request"})
 # to update the details of a specific flight identified by its ID.
 Method: PATCH
-URL : 
+URL : https://air-ticket.onrender.com/api/flights/id
 BODY : {
      
  airline : {type : String, required: true, },
@@ -80,7 +80,7 @@ status(400).send({status : "Falied", message :  "Bad Request"}
 
 # users to delete a specific flight identified by its ID.
 Method: DELETE
-URL : 
+URL : https://air-ticket.onrender.com/api/flights/id
 
 Responses
  res.status(202).send({status : "Success",message :  "Flight Deleted successfuly", data : flights})
@@ -88,7 +88,7 @@ status(400).send({status : "Falied", message :  "Bad Request"}
 
 # user to book flights.
 Method: POST
-URL : 
+URL : https://air-ticket.onrender.com/api/booking
 BODY : {
     email, flightNo
 }
@@ -99,7 +99,7 @@ Responses
 
 # list all the bookings so far with the user and flight details.
 Method: GET
-URL : 
+URL : https://air-ticket.onrender.com/api/dashboard
 
 Responses
  res.status(200).send({status : "Success", message :  "All Bookings are here", Bookings})
