@@ -84,7 +84,7 @@ FlightRoute.patch("/flights/:id", async (req, res) => {
       }
     );
 
-    return res.status(204);
+    return res.status(204).send("done");
   } catch (e) {
     return res.status(400).send({ status: "Falied", message: "Bad Request" });
   }
