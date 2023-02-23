@@ -6,11 +6,13 @@ const PORT = process.env.PORT || 8082
 
 const app = express();
 const cors = require("cors");
-
+const login = require("./src/routes/login.route")
+const register = require("./src/routes/register.route")
 const connect = require("./src/config/db")
 app.use(express.json());
 app.use(cors())
-
+app.use("/api", login);
+app.use("/api", register);
 app.listen(PORT, async () =>{
     try{
 await connect();
